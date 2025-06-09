@@ -24,7 +24,7 @@ const protocols = [
 	{
 		icon: Coins,
 		name: "Agora Finance",
-		description: "AUSD stablecoin ecosystem",
+		description: "Agora is a Money Market for Lending, Borrowing on Metis",
 		gradient: "from-orange-500 to-yellow-500",
 	},
 ];
