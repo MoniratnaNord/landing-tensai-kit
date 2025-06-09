@@ -54,7 +54,7 @@ export default function Hero() {
 							transition={{ duration: 0.8, delay: 0.3 }}
 						>
 							Autonomous
-							<span className="text-gradient-primary block">DeFAI</span>
+							<span className="text-gradient-primary block">DeFI</span>
 							Agent Kit
 						</motion.h1>
 
