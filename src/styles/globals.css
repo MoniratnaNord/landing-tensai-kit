@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--background: 0 0% 100%;
+	--foreground: 20 14.3% 4.1%;
+	--muted: 60 4.8% 95.9%;
+	--muted-foreground: 25 5.3% 44.7%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 20 14.3% 4.1%;
+	--card: 0 0% 100%;
+	--card-foreground: 20 14.3% 4.1%;
+	--border: 20 5.9% 90%;
+	--input: 20 5.9% 90%;
+	--primary: 16 100% 60%;
+	--primary-foreground: 0 0% 100%;
+	--secondary: 60 4.8% 95.9%;
+	--secondary-foreground: 24 9.8% 10%;
+	--accent: 60 4.8% 95.9%;
+	--accent-foreground: 24 9.8% 10%;
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 60 9.1% 97.8%;
+	--ring: 20 14.3% 4.1%;
+	--radius: 0.5rem;
+
+	/* Custom TensaiKit colors */
+	--tensai-primary: 16 100% 60%;
+	--tensai-primary-light: 16 100% 70%;
+	--tensai-primary-dark: 16 85% 50%;
+	--tensai-accent: 195 100% 50%;
+	--tensai-secondary-dark: 220 26% 14%;
+	--tensai-secondary: 220 13% 18%;
+	--tensai-gray-50: 60 9% 98%;
+	--tensai-gray-100: 24 12% 95%;
+	--tensai-gray-600: 25 5% 45%;
+	--tensai-gray-900: 24 10% 10%;
+}
+
+.dark {
+	--background: 240 10% 3.9%;
+	--foreground: 0 0% 98%;
+	--muted: 240 3.7% 15.9%;
+	--muted-foreground: 240 5% 64.9%;
+	--popover: 240 10% 3.9%;
+	--popover-foreground: 0 0% 98%;
+	--card: 240 10% 3.9%;
+	--card-foreground: 0 0% 98%;
+	--border: 240 3.7% 15.9%;
+	--input: 240 3.7% 15.9%;
+	--primary: 16 100% 60%;
+	--primary-foreground: 0 0% 100%;
+	--secondary: 240 3.7% 15.9%;
+	--secondary-foreground: 0 0% 98%;
+	--accent: 240 3.7% 15.9%;
+	--accent-foreground: 0 0% 98%;
+	--destructive: 0 62.8% 30.6%;
+	--destructive-foreground: 0 0% 98%;
+	--ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply font-sans antialiased bg-background text-foreground;
+	}
+}
+
+@layer utilities {
+	.bg-hero-gradient {
+		background: linear-gradient(
+			135deg,
+			hsl(220, 26%, 14%) 0%,
+			hsl(220, 13%, 18%) 100%
+		);
+	}
+
+	.text-gradient-primary {
+		background: linear-gradient(
+			135deg,
+			hsl(16, 100%, 60%) 0%,
+			hsl(195, 100%, 50%) 100%
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.text-orange-500 {
+		color: hsl(16, 100%, 60%);
+	}
+
+	.bg-orange-500 {
+		background-color: hsl(16, 100%, 60%);
+	}
+}
