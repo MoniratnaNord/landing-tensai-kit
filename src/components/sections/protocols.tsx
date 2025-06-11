@@ -23,8 +23,8 @@ const protocols = [
 	},
 	{
 		icon: Coins,
-		name: "Agora Finance",
-		description: "Agora is a Money Market for Lending, Borrowing on Metis",
+		name: "Vertex Protocol",
+		description: "Vertex for decentralized spot and perpetual crypto trading",
 		gradient: "from-orange-500 to-yellow-500",
 	},
 ];
