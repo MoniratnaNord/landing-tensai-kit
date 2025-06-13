@@ -61,12 +61,34 @@ export default function Navigation() {
 						>
 							Protocols
 						</button>
-						<button
-							onClick={() => scrollToSection("developers")}
-							className="text-gray-700 hover:text-orange-500 transition-colors"
-						>
-							Developers
-						</button>
+						<div className="relative group">
+							<button className="text-gray-700 hover:text-orange-500 transition-colors flex items-center gap-1">
+								Developers
+								<svg
+									className="w-4 h-4 ml-1"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M19 9l-7 7-7-7"
+									/>
+								</svg>
+							</button>
+							<div className="absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+								<a
+									href="https://tensai-kit-docs.netlify.app"
+									className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Documents
+								</a>
+							</div>
+						</div>
 						<Button className="bg-orange-500 text-white hover:bg-orange-600 transition-colors font-medium">
 							Get Started
 						</Button>

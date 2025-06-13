@@ -1,15 +1,18 @@
 import { Brain } from "lucide-react";
 import { FaTwitter, FaGithub, FaDiscord } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const footerSections = [
 	{
 		title: "Product",
 		links: ["Features", "Integrations", "Protocols"],
+		url: ["#features", "#integrations", "#protocols"],
 	},
 	{
 		title: "Developers",
 		links: ["Documentation", "API Reference", "Examples"],
+		url: ["https://tensai-kit-docs.netlify.app/", "", ""],
 	},
 	// {
 	//   title: "Company",
@@ -64,7 +67,13 @@ export default function Footer() {
 								{section.links.map((link) => (
 									<li key={link}>
 										<button className="hover:text-white transition-colors text-left">
-											{link}
+											<Link
+												href={section?.url[section.links.indexOf(link)]}
+												rel="noopener noreferrer"
+												target="_blank"
+											>
+												{link}
+											</Link>{" "}
 										</button>
 									</li>
 								))}
