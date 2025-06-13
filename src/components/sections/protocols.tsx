@@ -15,16 +15,16 @@ const protocols = [
 		description: "Decentralized exchange and DeFi platform",
 		gradient: "from-pink-500 to-red-500",
 	},
-	{
-		icon: Sprout,
-		name: "Yearn",
-		description: "Automated yield farming strategies",
-		gradient: "from-blue-500 to-indigo-500",
-	},
+	// {
+	// 	icon: Sprout,
+	// 	name: "Yearn",
+	// 	description: "Automated yield farming strategies",
+	// 	gradient: "from-blue-500 to-indigo-500",
+	// },
 	{
 		icon: Coins,
 		name: "Vertex Protocol",
-		description: "Vertex for decentralized spot and perpetual crypto trading",
+		description: "Vertex for decentralized crypto trading",
 		gradient: "from-orange-500 to-yellow-500",
 	},
 ];
@@ -56,7 +56,7 @@ export default function Protocols() {
 					</p>
 				</motion.div>
 
-				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
 					{protocols.map((protocol, index) => (
 						<motion.div
 							key={protocol.name}

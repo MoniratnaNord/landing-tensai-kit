@@ -88,7 +88,7 @@ export default function Integrations() {
 						transition={{ duration: 0.8 }}
 						viewport={{ once: true }}
 					>
-						<Card className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl border border-orange-100">
+						{/* <Card className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl border border-orange-100">
 							<CardContent className="p-8">
 								<div className="flex items-center space-x-4 mb-4">
 									<div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center">
@@ -108,7 +108,7 @@ export default function Integrations() {
 									<span>Production Ready</span>
 								</div>
 							</CardContent>
-						</Card>
+						</Card> */}
 
 						<Card className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
 							<CardContent className="p-8">
