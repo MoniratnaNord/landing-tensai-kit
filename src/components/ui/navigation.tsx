@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Brain, Menu } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Navigation() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -90,7 +91,13 @@ export default function Navigation() {
 							</div>
 						</div>
 						<Button className="bg-orange-500 text-white hover:bg-orange-600 transition-colors font-medium">
-							Get Started
+							<Link
+								href="https://tensai-kit-docs.netlify.app"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Get Started
+							</Link>
 						</Button>
 					</div>
 

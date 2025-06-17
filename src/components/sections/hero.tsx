@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
 	return (
-		<section className="relative min-h-screen flex items-center bg-hero-gradient overflow-hidden">
+		<section
+			id="hero"
+			className="relative min-h-screen flex items-center bg-hero-gradient overflow-hidden"
+		>
 			{/* Background Elements */}
 			<div className="absolute inset-0 opacity-10">
 				<div className="w-full h-full bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-orange-600/20" />
@@ -155,7 +158,7 @@ export default function Hero() {
 										<span className="text-green-400">+8.7%</span>
 									</div>
 									<div className="flex items-center justify-between p-3 bg-gray-700/30 rounded-lg">
-										<span className="text-gray-300">Yearn Vault</span>
+										<span className="text-gray-300">Vertex Protocol</span>
 										<span className="text-green-400">+15.2%</span>
 									</div>
 								</div>
