@@ -1,16 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Layers, Fish, Sprout, Coins } from "lucide-react";
 import { motion } from "framer-motion";
+import morpho from "../../assets/morpho.jpg";
+import sushi from "../../assets/sushiswap.jpg";
+import vertex from "../../assets/vertex.jpg";
+import Image from "next/image";
 
 const protocols = [
 	{
-		icon: Layers,
+		icon: morpho,
 		name: "Morpho",
 		description: "Optimized lending and borrowing protocols",
 		gradient: "from-purple-500 to-pink-500",
 	},
 	{
-		icon: Fish,
+		icon: sushi,
 		name: "Sushi",
 		description: "Decentralized exchange and DeFi platform",
 		gradient: "from-pink-500 to-red-500",
@@ -22,7 +26,7 @@ const protocols = [
 	// 	gradient: "from-blue-500 to-indigo-500",
 	// },
 	{
-		icon: Coins,
+		icon: vertex,
 		name: "Vertex Protocol",
 		description: "Vertex for decentralized crypto trading",
 		gradient: "from-orange-500 to-yellow-500",
@@ -71,7 +75,14 @@ export default function Protocols() {
 									<div
 										className={`w-16 h-16 bg-gradient-to-br ${protocol.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4`}
 									>
-										<protocol.icon className="text-white w-8 h-8" />
+										{/* <protocol.icon className="text-white w-8 h-8" /> */}
+										<Image
+											src={protocol.icon}
+											alt={protocol.name}
+											width={32}
+											height={32}
+											className="text-white w-8 h-8"
+										/>
 									</div>
 									<h3 className="text-xl font-bold text-white mb-2">
 										{protocol.name}

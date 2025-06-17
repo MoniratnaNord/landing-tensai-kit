@@ -2,6 +2,7 @@ import { Brain } from "lucide-react";
 import { FaTwitter, FaGithub, FaDiscord } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const footerSections = [
 	{
@@ -12,13 +13,35 @@ const footerSections = [
 	{
 		title: "Developers",
 		links: ["Documentation", "API Reference", "Examples"],
-		url: ["https://tensai-kit-docs.netlify.app/", "", ""],
+		url: [
+			"https://tensai-kit-docs.netlify.app/",
+			"https://tensai-kit-docs.netlify.app/setup-agent",
+			"https://tensai-kit-docs.netlify.app/adding-protocol",
+		],
 	},
 	// {
 	//   title: "Company",
 	//   links: ["About", "Blog", "Careers", "Contact"]
 	// }
 ];
+
+// const [isScrolled, setIsScrolled] = useState(false);
+
+// useEffect(() => {
+// 	const handleScroll = () => {
+// 		setIsScrolled(window.scrollY > 100);
+// 	};
+
+// 	window.addEventListener("scroll", handleScroll);
+// 	return () => window.removeEventListener("scroll", handleScroll);
+// }, []);
+
+// const scrollToSection = (sectionId: string) => {
+// 	const element = document.getElementById(sectionId);
+// 	if (element) {
+// 		element.scrollIntoView({ behavior: "smooth" });
+// 	}
+// };
 
 export default function Footer() {
 	return (
@@ -69,8 +92,12 @@ export default function Footer() {
 										<button className="hover:text-white transition-colors text-left">
 											<Link
 												href={section?.url[section.links.indexOf(link)]}
-												rel="noopener noreferrer"
-												target="_blank"
+												rel={
+													section.title === "Product"
+														? ""
+														: "noopener noreferrer"
+												}
+												target={section.title === "Product" ? "" : "_blank"}
 											>
 												{link}
 											</Link>{" "}
