@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Brain, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import tensaikit from "../../assets/TensaiKit.png";
+import Image from "next/image";
 
 export default function Navigation() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -40,7 +42,8 @@ export default function Navigation() {
 						{/* <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
               <Brain className="text-white w-5 h-5" />
             </div> */}
-						<span className="text-2xl font-bold text-gray-900">TENSAI kit</span>
+						{/* <span className="text-2xl font-bold text-gray-900">TENSAI kit</span> */}
+						<Image src={tensaikit} alt="TensaiKit" width={100} height={100} />
 					</div>
 
 					<div className="hidden md:flex items-center space-x-8">
