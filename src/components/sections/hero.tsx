@@ -1,12 +1,18 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Rocket, Play, Users, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { Toast, ToastClose, ToastDescription, ToastTitle } from "../ui/toast";
+import { useState } from "react";
+import { FaCross, FaInfoCircle } from "react-icons/fa";
 
 export default function Hero() {
+	const [isToastOpen, setIsToastOpen] = useState(false);
 	return (
 		<section
 			id="hero"
-			className="relative min-h-screen flex items-center bg-hero-gradient overflow-hidden"
+			className="relative min-h-screen flex items-center bg-[#1B012F] overflow-hidden"
 		>
 			{/* Background Elements */}
 			<div className="absolute inset-0 opacity-10">
@@ -44,9 +50,9 @@ export default function Hero() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}
 						>
-							<span className="inline-block bg-orange-500/20 text-orange-200 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30">
+							<span className="inline-block bg-[#ffc300] text-black px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30">
 								<Rocket className="inline w-4 h-4 mr-2" />
-								Now Live on Katana Network
+								Coming Soon
 							</span>
 						</motion.div>
 
@@ -57,8 +63,8 @@ export default function Hero() {
 							transition={{ duration: 0.8, delay: 0.3 }}
 						>
 							Autonomous
-							<span className="text-gradient-primary block">DeFI</span>
-							Agent Kit
+							<span className="text-[#FFC300] block">DeFi Agent Kit</span>
+							on Katana
 						</motion.h1>
 
 						<motion.p
@@ -78,13 +84,20 @@ export default function Hero() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.7 }}
 						>
+							{/* <Link
+								href="https://tensai-kit-docs.netlify.app"
+								target="_blank"
+								rel="noopener noreferrer"
+							> */}
 							<Button
 								size="lg"
-								className="bg-orange-500 text-white hover:bg-orange-600 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+								className="bg-[#FFC300] text-black hover:bg-[#FFD600] transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+								onClick={() => setIsToastOpen(true)}
 							>
 								<Rocket className="mr-2 w-5 h-5" />
-								Get in touch for Start Building
+								Get started now
 							</Button>
+							{/* </Link> */}
 							{/* <Button 
                 variant="outline" 
                 size="lg"
@@ -101,18 +114,18 @@ export default function Hero() {
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.6, delay: 0.9 }}
 						>
-							<div className="flex items-center space-x-2">
+							{/* <div className="flex items-center space-x-2">
 								<div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
 								<span>Live on Katana</span>
-							</div>
-							<div className="flex items-center space-x-2">
+							</div> */}
+							{/* <div className="flex items-center space-x-2">
 								<Users className="w-4 h-4" />
 								<span>1000+ Developers</span>
 							</div>
 							<div className="flex items-center space-x-2">
 								<TrendingUp className="w-4 h-4" />
 								<span>$10M+ Managed</span>
-							</div>
+							</div> */}
 						</motion.div>
 					</motion.div>
 
@@ -133,7 +146,7 @@ export default function Hero() {
 									</span>
 								</div>
 
-								<div className="grid grid-cols-2 gap-4">
+								{/* <div className="grid grid-cols-2 gap-4">
 									<div className="bg-gray-700/50 rounded-lg p-4">
 										<div className="text-green-400 text-2xl font-bold">
 											2,547
@@ -146,20 +159,34 @@ export default function Hero() {
 										</div>
 										<div className="text-gray-300 text-sm">TVL Managed</div>
 									</div>
+								</div> */}
+								<div className="grid grid-cols-2 gap-4">
+									<div className="bg-gray-700/50 rounded-lg p-4">
+										<div className="text-green-400 text-2xl font-bold blur-sm">
+											2,547
+										</div>
+										<div className="text-gray-300 text-sm">Active Agents</div>
+									</div>
+									<div className="bg-gray-700/50 rounded-lg p-4">
+										<div className="text-orange-500 text-2xl font-bold blur-sm">
+											$12.4M
+										</div>
+										<div className="text-gray-300 text-sm">TVL Managed</div>
+									</div>
 								</div>
 
 								<div className="space-y-3">
 									<div className="flex items-center justify-between p-3 bg-gray-700/30 rounded-lg">
 										<span className="text-gray-300">Morpho Strategy</span>
-										<span className="text-green-400">+12.4%</span>
+										<span className="text-green-400 blur">+12.4%</span>
 									</div>
 									<div className="flex items-center justify-between p-3 bg-gray-700/30 rounded-lg">
 										<span className="text-gray-300">Sushi LP Farm</span>
-										<span className="text-green-400">+8.7%</span>
+										<span className="text-green-400 blur">+8.7%</span>
 									</div>
 									<div className="flex items-center justify-between p-3 bg-gray-700/30 rounded-lg">
 										<span className="text-gray-300">Vertex Protocol</span>
-										<span className="text-green-400">+15.2%</span>
+										<span className="text-green-400 blur">+15.2%</span>
 									</div>
 								</div>
 							</div>
@@ -177,7 +204,9 @@ export default function Hero() {
 								</div>
 								<div>
 									<p className="text-gray-600 text-sm">Active Agents</p>
-									<p className="text-2xl font-bold text-gray-900">2,547</p>
+									<p className="text-2xl font-bold text-gray-900 blur-sm">
+										2,547
+									</p>
 								</div>
 							</div>
 						</motion.div>
@@ -193,12 +222,31 @@ export default function Hero() {
 								</div>
 								<div>
 									<p className="text-gray-600 text-sm">TVL Managed</p>
-									<p className="text-2xl font-bold text-gray-900">$12.4M</p>
+									<p className="text-2xl font-bold text-gray-900 blur-sm">
+										$12.4M
+									</p>
 								</div>
 							</div>
 						</motion.div>
 					</motion.div>
 				</div>
+				<Toast
+					open={isToastOpen}
+					onOpenChange={setIsToastOpen}
+					variant="destructive"
+					className="bg-[#1b012f] border-[#ffc300] border-2"
+					duration={3000}
+				>
+					<ToastTitle className="text-[#ffc300]">
+						<FaInfoCircle className="w-6 h-6" />
+					</ToastTitle>
+					<ToastDescription className="text-[#ffc300]">
+						Docs will be deployed soon.
+					</ToastDescription>
+					<ToastClose className="text-[#ffc300]">
+						<FaCross className="w-6 h-6" />
+					</ToastClose>
+				</Toast>
 			</div>
 		</section>
 	);

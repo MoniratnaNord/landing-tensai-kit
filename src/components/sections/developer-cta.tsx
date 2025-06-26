@@ -2,6 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Rocket, Book, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { Toast, ToastClose, ToastDescription, ToastTitle } from "../ui/toast";
+import { FaCross, FaInfoCircle } from "react-icons/fa";
+import { useState } from "react";
 
 const benefits = [
 	{
@@ -19,6 +23,7 @@ const benefits = [
 ];
 
 export default function DeveloperCTA() {
+	const [isToastOpen, setIsToastOpen] = useState(false);
 	return (
 		<section
 			id="developers"
@@ -41,13 +46,13 @@ export default function DeveloperCTA() {
 									transition={{ duration: 0.6, delay: 0.2 }}
 									viewport={{ once: true }}
 								>
-									<span className="inline-block bg-orange-100 text-orange-500 px-4 py-2 rounded-full text-sm font-medium mb-4">
+									<span className="inline-block bg-[#ffc300] text-black px-4 py-2 rounded-full text-sm font-medium mb-4">
 										<Code className="inline w-4 h-4 mr-2" />
 										For Developers
 									</span>
 									<h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
 										Start Building
-										<span className="text-orange-500"> Today</span>
+										<span className="text-[#ffc300]"> Today</span>
 									</h2>
 									<p className="text-xl text-gray-600 leading-relaxed mb-8">
 										Join the growing community of developers building the future
@@ -65,8 +70,8 @@ export default function DeveloperCTA() {
 											transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
 											viewport={{ once: true }}
 										>
-											<div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-												<CheckCircle className="text-white w-4 h-4" />
+											<div className="w-6 h-6 bg-[#ffc300] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+												<CheckCircle className="text-black w-4 h-4" />
 											</div>
 											<div>
 												<h4 className="font-semibold text-gray-900 mb-1">
@@ -85,25 +90,25 @@ export default function DeveloperCTA() {
 									transition={{ duration: 0.6, delay: 0.7 }}
 									viewport={{ once: true }}
 								>
-									<Button
-										size="lg"
-										className="bg-orange-500 text-white hover:bg-orange-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-									>
-										<Rocket className="mr-2 w-5 h-5" />
-										Get Started Now
-									</Button>
+									{/* <Link
+										href="https://tensai-kit-docs.netlify.app/"
+										target="_blank"
+										rel="noopener noreferrer"
+									> */}
 									<Button
 										variant="outline"
 										size="lg"
-										className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-300 font-semibold"
+										className="bg-[#ffc300] border-gray-300 text-gray-700 hover:bg-[#fff300] transition-all duration-300 font-semibold"
+										onClick={() => setIsToastOpen(true)}
 									>
 										<Book className="mr-2 w-5 h-5" />
 										View Documentation
 									</Button>
+									{/* </Link> */}
 								</motion.div>
 							</CardContent>
 
-							<div className="bg-gray-900 p-8 lg:p-12 flex items-center">
+							<div className="bg-[#1B012F] p-8 lg:p-12 flex items-center">
 								<motion.div
 									className="w-full"
 									initial={{ opacity: 0, scale: 0.9 }}
@@ -125,14 +130,11 @@ export default function DeveloperCTA() {
 												<span className="text-blue-400">import</span>{" "}
 												<span className="text-yellow-400">
 													{
-														"{ TensaiKit, walletActionProvider, sushiSwapActionProvider, erc20ActionProvider}"
+														"{ TensaiKit, walletActionProvider, sushiSwapActionProvider, morphoActionProvider}"
 													}
 												</span>{" "}
 												<span className="text-blue-400">from</span>{" "}
-												<span className="text-yellow-400">
-													'tensai-kit-sdk'
-												</span>
-												;
+												<span className="text-yellow-400">'tensai-kit'</span>;
 											</div>
 											{/* <div>
 												<span className="text-blue-400">import</span>{" "}
@@ -142,38 +144,46 @@ export default function DeveloperCTA() {
 												<span className="text-blue-400">from</span>{" "}
 												<span className="text-yellow-400">'elizaos'</span>;
 											</div> */}
-											<div className="mt-4">
+											{/* <div className="mt-4">
 												<span className="text-blue-400">const</span>{" "}
 												<span className="text-white">account</span> ={" "}
 												<span className="text-blue-400">
 													privateKeyToAccount((process.env.WALLET_PRIVATE_KEY as
 													`0x{"string"}`) ?? "");
 												</span>{" "}
-											</div>
+											</div> */}
 											<div className="mt-4">
 												<span className="text-blue-400">const</span>{" "}
-												<span className="text-white">client</span> ={" "}
-												<span className="text-purple-400">
+												<span className="text-white">config</span> ={" "}
+												{/* <span className="text-purple-400">
 													createWalletClient
-												</span>
-												({"{"}
+												</span> */}
+												{"{"}
 											</div>
 
 											<div className="ml-4">
-												<span className="text-red-400">account,</span>
+												<span className="text-red-400">appId,</span>:{" "}
+												<span className="text-yellow-400">PRIVY_APP_ID,</span>
 												<br />
-												<span className="text-red-400">chain</span>:
-												<span className="text-yellow-400">polygon,</span>
+												<span className="text-red-400">appSecret</span>:{" "}
+												<span className="text-yellow-400">
+													PRIVY_APP_SECRET,
+												</span>
 												<br />
-												<span className="text-yellow-400">transport</span>:{" "}
-												<span className="text-yellow-400">http()</span>
-												<br /> ],
+												<span className="text-yellow-400">chainId</span>:{" "}
+												<span className="text-yellow-400">CHAIN_ID</span>
+												<br />
+												<span className="text-yellow-400">walletId</span>:{" "}
+												<span className="text-yellow-400">
+													PRIVY_CREATED_WALLET_ID
+												</span>
+												<br /> {"}"};
 											</div>
 											<div className="">
 												<span className="text-blue-400">const</span>{" "}
-												<span className="text-white">walletProvider</span>=
+												<span className="text-white">privyWalletProvider</span>=
 												<span className="text-yellow-400">
-													new ViemWalletProvider(client);
+													new PrivyWalletProvider.configureWithWallet(config);
 												</span>
 											</div>
 											<div className="mt-4">
@@ -185,7 +195,9 @@ export default function DeveloperCTA() {
 											</div>
 											<div className="ml-4">
 												<span className="text-red-400">walletProvider</span>:{" "}
-												<span className="text-red-400">walletProvider,</span>{" "}
+												<span className="text-red-400">
+													privyWalletProvider,
+												</span>{" "}
 												{/* <span className="text-yellow-400">'DefiTrader'</span>, */}
 											</div>
 											<div className="ml-4">
@@ -196,7 +208,7 @@ export default function DeveloperCTA() {
 												</span>
 												,<br />{" "}
 												<span className="text-yellow-400">
-													erc20ActionProvider()
+													morphoActionProvider()
 												</span>
 												,<br />{" "}
 												<span className="text-yellow-400">
@@ -224,6 +236,23 @@ export default function DeveloperCTA() {
 								</motion.div>
 							</div>
 						</div>
+						<Toast
+							open={isToastOpen}
+							onOpenChange={setIsToastOpen}
+							variant="destructive"
+							className="bg-[#1b012f] border-[#ffc300] border-2"
+							duration={3000}
+						>
+							<ToastTitle className="text-[#ffc300]">
+								<FaInfoCircle className="w-6 h-6" />
+							</ToastTitle>
+							<ToastDescription className="text-[#ffc300]">
+								Docs will be deployed soon.
+							</ToastDescription>
+							<ToastClose className="text-[#ffc300]">
+								<FaCross className="w-6 h-6" />
+							</ToastClose>
+						</Toast>
 					</Card>
 				</motion.div>
 			</div>

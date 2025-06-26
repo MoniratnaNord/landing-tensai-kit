@@ -11,13 +11,13 @@ const protocols = [
 		icon: morpho,
 		name: "Morpho",
 		description: "Optimized lending and borrowing protocols",
-		gradient: "from-purple-500 to-pink-500",
+		gradient: "from-[#ffc300] to-[#ffa300]",
 	},
 	{
 		icon: sushi,
 		name: "Sushi",
 		description: "Decentralized exchange and DeFi platform",
-		gradient: "from-pink-500 to-red-500",
+		gradient: "from-[#ffc300] to-[#ffa300]",
 	},
 	// {
 	// 	icon: Sprout,
@@ -28,8 +28,8 @@ const protocols = [
 	{
 		icon: vertex,
 		name: "Vertex Protocol",
-		description: "Vertex for decentralized crypto trading",
-		gradient: "from-orange-500 to-yellow-500",
+		description: "Vertex for decentralized preps trading",
+		gradient: "from-[#ffc300] to-[#ffa300]",
 	},
 ];
 
@@ -41,7 +41,7 @@ const stats = [
 
 export default function Protocols() {
 	return (
-		<section id="protocols" className="py-20 bg-gray-900">
+		<section id="protocols" className="py-20 bg-[#1b012f]">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					className="text-center mb-16"
@@ -52,7 +52,7 @@ export default function Protocols() {
 				>
 					<h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
 						Connected to Leading{" "}
-						<span className="text-orange-500">DeFi Protocols</span>
+						<span className="text-[#ffc300]">DeFi Protocols on Katana</span>
 					</h2>
 					<p className="text-xl text-gray-300 max-w-3xl mx-auto">
 						TensaiKit provides seamless access to Katana's comprehensive DeFi
