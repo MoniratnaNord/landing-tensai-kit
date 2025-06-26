@@ -14,7 +14,7 @@ const features = [
 		icon: Network,
 		title: "Multi-Protocol Support",
 		description:
-			"Seamless interaction with Katana's DeFi ecosystem including Morpho, Sushi, and Vertex Finance.",
+			"Seamless interaction with Katana's DeFi ecosystem including Morpho, Sushi, and Vertex Protocol.",
 		gradient: "from-blue-500 to-blue-600",
 	},
 	{

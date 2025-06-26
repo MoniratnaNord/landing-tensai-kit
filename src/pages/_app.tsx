@@ -6,8 +6,11 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
-				<title>Tensai Kit - The Ultimate AI Toolkit for Developers</title>
-				<meta name="description" content="This is a description for SEO." />
+				<title>Tensai Kit - Autonomous DeFi Agent Kit on Katana</title>
+				<meta
+					name="description"
+					content="Autonomous DeFi Agent Kit on Katana"
+				/>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/iconyellowcircle.png" />
 			</Head>

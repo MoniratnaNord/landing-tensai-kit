@@ -20,7 +20,7 @@ export default function Hero() {
 			</div>
 
 			{/* Floating Elements */}
-			<motion.div
+			{/* <motion.div
 				className="absolute top-20 right-10 w-20 h-20 bg-orange-500/20 rounded-full"
 				animate={{ y: [0, -20, 0] }}
 				transition={{ duration: 3, repeat: Infinity }}
@@ -34,7 +34,7 @@ export default function Hero() {
 				className="absolute top-1/2 right-1/4 w-12 h-12 bg-orange-600/30 rounded-full"
 				animate={{ scale: [1, 1.2, 1] }}
 				transition={{ duration: 2.5, repeat: Infinity }}
-			/>
+			/> */}
 
 			<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
 				<div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -241,7 +241,7 @@ export default function Hero() {
 						<FaInfoCircle className="w-6 h-6" />
 					</ToastTitle>
 					<ToastDescription className="text-[#ffc300]">
-						Docs will be deployed soon.
+						TensaiKit is being enriched — deployment coming soon.
 					</ToastDescription>
 					<ToastClose className="text-[#ffc300]">
 						<FaCross className="w-6 h-6" />
